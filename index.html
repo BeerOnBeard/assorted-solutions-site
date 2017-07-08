@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <meta chartype="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assorted Solutions</title>
+    <link rel="icon" href="AssortedSolutions_Favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Heebo|Roboto" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        
+        /* TODO: Need to match font and brand images */
+        font-family: 'Roboto', sans-serif;
+        background: #F5F5F5;
+      }
+      h1 {
+        font-family: 'Heebo', sans-serif;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 0.5em;
+        
+        background: #FFF;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+      }
+      .header > h1 {
+        margin: 0;
+        font-size: 2em;
+      }
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        
+        width: 19em; /* fits three cards across 1024px screen perfectly */
+        margin: 1em;
+        background-color: #FFF;
+        border-radius: 2px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16),
+                    0 3px 6px rgba(0,0,0,0.23);
+      }
+      .card__image {
+        width: 100%;
+        height: 15em;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .card__header {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0.5em 1em 0 0.5em;
+      }
+      .card__info {
+        flex: 1;
+        font-size: 1.25em;
+        color: gray;
+        margin: 0.25em 1em 1em 1em;
+      }
+      .card__link {
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 0 1em 1em;
+        color: #0275d8;
+      }
+      
+      @media all and (max-width: 1024px) {
+        .cards {
+          justify-content: space-around;
+        }
+      }
+             
+      @media all and (max-width: 675px) {
+        .card {
+          width: 100%;
+        }
+      }
+      
+      @media all and (max-width: 550px) {
+        .header > h1 {
+          font-size: 1.1em;
+        }
+      }
+    </style>
+    <style>
+      .logo-as {
+        background-image: url('AssortedSolutions_Logo.png');
+        width: 100px;
+        height: 44px;
+      }
+      
+      .img-tk {
+        background-image: url('thunderkitten.png');
+      }
+      .img-gh {
+        background-image: url('Octocat.png');
+      }
+      .img-dh {
+        background-image: url('docker.png');
+        background-position: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo-as"></div>
+      <h1 class="header__text">Assorted Solutions Hub</h1>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card__image img-tk"></div>
+        <div class="card__header">Thunder Kittens</div>
+        <div class="card__info">My band's website. Check us out!</div>
+        <a class="card__link" href="http://www.thunderkittensband.com" target="_blank">TAKE ME THERE</a>
+      </div>
+      <div class="card">
+        <div class="card__image img-gh"></div>
+        <div class="card__header">GitHub</div>
+        <div class="card__info">My GitHub page. I'm known as BeerOnBeard in those parts.</div>
+        <a class="card__link" href="https://github.com/BeerOnBeard" target="_blank">TAKE ME THERE</a>
+      </div>
+      <div class="card">
+        <div class="card__image img-dh"></div>
+        <div class="card__header">DockerHub</div>
+        <div class="card__info">My Docker Hub page. I'm known as BeerOnBeard in those parts.</div>
+        <a class="card__link" href="https://hub.docker.com/r/beeronbeard/" target="_blank">TAKE ME THERE</a>
+      </div>
+    </div>
+  </body>
+</html>

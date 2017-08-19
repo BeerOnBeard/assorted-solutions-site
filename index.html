@@ -35,6 +35,9 @@
         margin: 0;
         font-size: 2em;
       }
+      .header__logo {
+        height: 4em;
+      }
       .cards {
         flex: 1;
         overflow-y: auto;
@@ -95,15 +98,12 @@
         .header > h1 {
           font-size: 1.1em;
         }
+        .header__logo {
+          height: 2em;
+        }
       }
     </style>
-    <style>
-      .logo-as {
-        background-image: url('AssortedSolutions_Logo.png');
-        width: 100px;
-        height: 44px;
-      }
-      
+    <style>      
       .img-tk {
         background-image: url('thunderkitten.png');
       }
@@ -111,17 +111,28 @@
         background-image: url('Octocat.png');
       }
       .img-dh {
-        background-image: url('docker.png');
-        background-position: left;
+        background-image: url('docker-logo.svg');
+      }
+      .img-blog {
+        background-image: url('thought-bubble.svg');
+      }
+      .img-travis {
+        background-image: url('TravisCI.svg');
       }
     </style>
   </head>
   <body>
     <div class="header">
-      <div class="logo-as"></div>
+      <img class="header__logo" src="AS-Logo.svg" />
       <h1 class="header__text">Assorted Solutions Hub</h1>
     </div>
     <div class="cards">
+      <div class="card">
+        <div class="card__image img-blog"></div>
+        <div class="card__header">Blog</div>
+        <div class="card__info">Assorted solutions and random thoughts.</div>
+        <a class="card__link" href="https://blog.assortedsolutions.com" target="_blank">TAKE ME THERE</a>
+      </div>
       <div class="card">
         <div class="card__image img-tk"></div>
         <div class="card__header">Thunder Kittens</div>
@@ -139,6 +150,12 @@
         <div class="card__header">DockerHub</div>
         <div class="card__info">My Docker Hub page. I'm known as BeerOnBeard in those parts.</div>
         <a class="card__link" href="https://hub.docker.com/r/beeronbeard/" target="_blank">TAKE ME THERE</a>
+      </div>
+      <div class="card">
+        <div class="card__image img-travis"></div>
+        <div class="card__header">TravisCI</div>
+        <div class="card__info">My TravisCI page. I'm known as BeerOnBeard in those parts.</div>
+        <a class="card__link" href="https://travis-ci.org/BeerOnBeard/" target="_blank">TAKE ME THERE</a>
       </div>
     </div>
   </body>

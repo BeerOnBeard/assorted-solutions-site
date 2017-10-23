@@ -56,6 +56,7 @@
         display: flex;
         flex-direction: column;
         
+        text-decoration: none;
         height: 30em;
         width: 19em; /* fits three cards across 1024px screen perfectly */
         margin: 1em;
@@ -73,6 +74,7 @@
       .card__header {
         font-size: 2em;
         font-weight: bold;
+        color: black;
         margin: 0.5em 1em 0 0.5em;
       }
       .card__info {
@@ -83,7 +85,6 @@
       }
       .card__link {
         text-align: right;
-        text-decoration: none;
         font-weight: bold;
         margin: 0 1em 1em 0;
         color: #0275d8;
@@ -135,36 +136,36 @@
       <h1 class="header__text">Assorted Solutions Hub</h1>
     </div>
     <div class="cards">
-      <div class="card">
+      <a class="card" href="https://blog.assortedsolutions.com" target="_blank">
         <div class="card__image img-blog"></div>
         <div class="card__header">Blog</div>
         <div class="card__info">Assorted solutions and random thoughts.</div>
-        <a class="card__link" href="https://blog.assortedsolutions.com" target="_blank">TAKE ME THERE</a>
-      </div>
-      <div class="card">
+        <span class="card__link">TAKE ME THERE</span>
+      </a>
+      <a class="card" href="http://www.thunderkittensband.com" target="_blank">
         <div class="card__image img-tk"></div>
         <div class="card__header">Thunder Kittens</div>
         <div class="card__info">My band's website. Check us out!</div>
-        <a class="card__link" href="http://www.thunderkittensband.com" target="_blank">TAKE ME THERE</a>
-      </div>
-      <div class="card">
+        <span class="card__link">TAKE ME THERE</span>
+      </a>
+      <a class="card" href="https://github.com/BeerOnBeard" target="_blank">
         <div class="card__image img-gh"></div>
         <div class="card__header">GitHub</div>
         <div class="card__info">My GitHub page. I'm known as BeerOnBeard in those parts.</div>
-        <a class="card__link" href="https://github.com/BeerOnBeard" target="_blank">TAKE ME THERE</a>
-      </div>
-      <div class="card">
+        <span class="card__link">TAKE ME THERE</span>
+      </a>
+      <a class="card" href="https://hub.docker.com/r/beeronbeard/" target="_blank">
         <div class="card__image img-dh"></div>
         <div class="card__header">DockerHub</div>
         <div class="card__info">My Docker Hub page. I'm known as BeerOnBeard in those parts.</div>
-        <a class="card__link" href="https://hub.docker.com/r/beeronbeard/" target="_blank">TAKE ME THERE</a>
-      </div>
-      <div class="card">
+        <span class="card__link">TAKE ME THERE</span>
+      </a>
+      <a class="card" href="https://travis-ci.org/BeerOnBeard/" target="_blank">
         <div class="card__image img-travis"></div>
         <div class="card__header">TravisCI</div>
         <div class="card__info">My TravisCI page. I'm known as BeerOnBeard in those parts.</div>
-        <a class="card__link" href="https://travis-ci.org/BeerOnBeard/" target="_blank">TAKE ME THERE</a>
-      </div>
+        <span class="card__link">TAKE ME THERE</span>
+      </a>
     </div>
   </body>
 </html>

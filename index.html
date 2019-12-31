@@ -1,180 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Assorted Solutions</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107289341-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments)};
-      gtag('js', new Date());
-      gtag('config', 'UA-107289341-1');
-    </script>
     <link rel="icon" href="AssortedSolutions_Favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Heebo|Roboto" rel="stylesheet">
     <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        
-        /* TODO: Need to match font and brand images */
-        font-family: 'Roboto', sans-serif;
-        background: #F5F5F5;
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #F5F5F5;
+      width: 100%;
+      font-family: sans-serif;
+    }
+    .name {
+      padding: 1rem 0 1rem 0.5rem;
+      font-size: 1.2rem;
+    }
+    .intro {
+      background: #000000 url('banner.png') no-repeat center bottom;
+    }
+    .intro__title {
+      color: #FFFFFF;
+      text-align: center;
+      padding: 8rem 0 3rem 0;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .about {
+      padding: 2rem 0.5rem;
+    }
+    .links {
+      background-color: #EAEAEA;
+      padding: 2rem 0;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+    .link {
+      display: block;
+      height: 12rem;
+      width: 12rem;
+      margin-bottom: 2rem;
+
+      /* hide text */
+      line-height: 0;
+      font-size: 0;
+      color: transparent;
+    }
+    .link--linkedin {
+      background: url('LinkedIn.png') no-repeat center bottom;
+      background-size: contain;
+    }
+    .link--github {
+      background: url('Octocat.png') no-repeat center bottom;
+      background-size: contain;
+    }
+    .link--docker-hub {
+      background: url('docker-logo.svg') no-repeat center bottom;
+      background-size: contain;
+    }
+    .link--blog {
+      background: url('blog.svg') no-repeat center bottom;
+      background-size: contain;
+    }
+    .link--thunder-kittens {
+      background: url('thunderkitten.png') no-repeat center bottom;
+      background-size: contain;
+    }
+    .link:hover {
+      box-shadow: 3px 3px 12px #000;
+    }
+    .footer {
+      margin-top: 1rem;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    @media all and (min-width: 380px) {
+      .intro__title {
+        font-size: 3rem;
       }
-      body {
-        display: flex;
-        flex-flow: column;
+      .link {
+        margin-left: 2rem;
+        margin-right: 2rem;
       }
-      h1 {
-        font-family: 'Heebo', sans-serif;
+    }
+
+    @media all and (min-width: 768px) {
+      .intro__title {
+        font-size: 4rem;
       }
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1em 0.5em;
-        z-index: 1;
-        background: #FFF;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    }
+
+    @media all and (min-width: 1000px) {
+      .intro__title {
+        font-size: 5rem;
       }
-      .header > h1 {
-        margin: 0;
-        font-size: 2em;
+      .name {
+        width: 1000px;
+        margin: auto;
       }
-      .header__logo {
-        height: 4em;
+      .about {
+        width: 1000px;
+        margin: auto;
       }
-      .cards {
-        flex: 1;
-        overflow-y: auto;
-        
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .card {
-        display: flex;
-        flex-direction: column;
-        
-        text-decoration: none;
-        height: 30em;
-        width: 19em; /* fits three cards across 1024px screen perfectly */
-        margin: 1em;
-        background-color: #FFF;
-        border-radius: 2px;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16),
-                    0 3px 6px rgba(0,0,0,0.23);
-      }
-      .card__image {
-        width: 100%;
-        height: 15em;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      .card__header {
-        font-size: 2em;
-        font-weight: bold;
-        color: black;
-        margin: 0.5em 1em 0 0.5em;
-      }
-      .card__info {
-        flex: 1;
-        font-size: 1.25em;
-        color: gray;
-        margin: 0.25em 1em 1em 1em;
-      }
-      .card__link {
-        text-align: right;
-        font-weight: bold;
-        margin: 0 1em 1em 0;
-        color: #0275d8;
-      }
-      
-      @media all and (max-width: 1024px) {
-        .cards {
-          justify-content: space-around;
-        }
-      }
-             
-      @media all and (max-width: 675px) {
-        .card {
-          width: 100%;
-          height: auto;
-        }
-      }
-      
-      @media all and (max-width: 550px) {
-        .header > h1 {
-          font-size: 1.1em;
-        }
-        .header__logo {
-          height: 2em;
-        }
-      }
-    </style>
-    <style>      
-      .img-tk {
-        background-image: url('thunderkitten.png');
-      }
-      .img-gh {
-        background-image: url('Octocat.png');
-      }
-      .img-dh {
-        background-image: url('docker-logo.svg');
-      }
-      .img-blog {
-        background-image: url('thought-bubble.svg');
-      }
-      .img-travis {
-        background-image: url('TravisCI.svg');
-      }
-      .img-linkedin {
-        background-image: url('LinkedIn.png');
-      }
+    }
     </style>
   </head>
   <body>
-    <div class="header">
-      <img class="header__logo" src="AS-Logo.svg" />
-      <h1 class="header__text">Assorted Solutions Hub</h1>
+    <div class="banner">
+      <div class="name">Adam Fournier</div>
+      <div class="intro">
+        <h1 class="intro__title">Hi, I'm Adam</h1>
+      </div>
     </div>
-    <div class="cards">
-      <a class="card" href="https://blog.assortedsolutions.com" target="_blank">
-        <div class="card__image img-blog"></div>
-        <div class="card__header">Blog</div>
-        <div class="card__info">Assorted solutions and random thoughts.</div>
-        <span class="card__link">TAKE ME THERE</span>
-      </a>
-      <a class="card" href="http://www.thunderkittensband.com" target="_blank">
-        <div class="card__image img-tk"></div>
-        <div class="card__header">Thunder Kittens</div>
-        <div class="card__info">My band's website. Check us out!</div>
-        <span class="card__link">TAKE ME THERE</span>
-      </a>
-      <a class="card" href="https://github.com/BeerOnBeard" target="_blank">
-        <div class="card__image img-gh"></div>
-        <div class="card__header">GitHub</div>
-        <div class="card__info">My GitHub page. I'm known as BeerOnBeard in those parts.</div>
-        <span class="card__link">TAKE ME THERE</span>
-      </a>
-      <a class="card" href="https://hub.docker.com/r/beeronbeard/" target="_blank">
-        <div class="card__image img-dh"></div>
-        <div class="card__header">DockerHub</div>
-        <div class="card__info">My Docker Hub page. I'm known as BeerOnBeard in those parts.</div>
-        <span class="card__link">TAKE ME THERE</span>
-      </a>
-      <a class="card" href="https://travis-ci.org/BeerOnBeard/" target="_blank">
-        <div class="card__image img-travis"></div>
-        <div class="card__header">TravisCI</div>
-        <div class="card__info">My TravisCI page. I'm known as BeerOnBeard in those parts.</div>
-        <span class="card__link">TAKE ME THERE</span>
-      </a>
-      <a class="card" href="https://www.linkedin.com/in/adam-fournier/" target="_blank">
-        <div class="card__image img-linkedin"></div>
-        <div class="card__header">LinkedIn</div>
-        <div class="card__info">My LinkedIn page.</div>
-        <span class="card__link">TAKE ME THERE</span>
-      </a>
+    <div class="about">
+      I'm a software engineer, musician, mountain biker, beer brewer, and generally enjoy making things with both software and physical media.
+      I've been building software professionally for over ten years. My band Thunder Kittens has been making music and playing it for people
+      for the past 5 or so. I occassionally write on my blog. I'll put some links below so you can find me in the other places on the internet.
+      Thanks for visiting!
+    </div>
+    <div class="links">
+      <a class="link link--linkedin" title="Linked In" href="https://www.linkedin.com/in/adam-fournier/"></a>
+      <a class="link link--github" title="GitHub" href="https://github.com/BeerOnBeard"></a>
+      <a class="link link--docker-hub" title="Docker Hub" href="https://hub.docker.com/r/beeronbeard/"></a>
+      <a class="link link--blog" title="Blog" href="https://blog.assortedsolutions.com"></a>
+      <a class="link link--thunder-kittens" title="Thunder Kittens" href="https://thunderkittensband.com"></a>
+    </div>
+    <div class="footer">
+      © Copyright 2020, Adam Fournier
+      <!-- Thanks Scott Hanselman for the layout inspiration! -->
     </div>
   </body>
 </html>
